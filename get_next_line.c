@@ -6,7 +6,7 @@
 /*   By: ekomarga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/01 15:51:34 by ekomarga          #+#    #+#             */
-/*   Updated: 2026/09/03 16:02:29 by ekomarga         ###   ########.fr       */
+/*   Updated: 2026/09/06 15:54:35 by ekomarga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static	char	*read_to_leftover(int fd, char	*leftover)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
-			return (free(buffer), free(leftover), NULL);
+			return (free(buffer), free(leftover), leftover = NULL);
 		buffer[bytes_read] = '\0';
 		leftover = ft_strjoin(leftover, buffer);
 	}
